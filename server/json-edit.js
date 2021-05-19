@@ -272,7 +272,7 @@ function jsonEditor( app, express, obj, displayName, template,route, theme) {
     meta.theme = theme;
   }
   
-  app.use(express.static(path.join(__dirname,"..","public"))));   
+  app.use(express.static(path.join(__dirname,"..","public")));   
   
   sha256Node.express(app,express,path.join(route,'sha256'));
   
