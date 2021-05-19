@@ -2,7 +2,7 @@
   "name": "secure-json",
   "version": "0.0.1",
   "description": "edit json files on the server",
-  "main": "index.js",
+  "main": "server/edit-json.js",
    "dependencies": {
     "express": "^4.17.1",
     "ace-express": "github:jonathan-annett/ace-express",
