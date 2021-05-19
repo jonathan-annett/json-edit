@@ -1,31 +1,25 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
   "name": "secure-json",
   "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
+  "description": "edit json files on the server",
+  "main": "index.js",
+   "dependencies": {
     "express": "^4.17.1",
     "ace-express": "github:jonathan-annett/ace-express",
     "sha256": "github:jonathan-annett/sha256",
-    "glitch-secure-json": "github:jonathan-annett/glitch-secure-json#c53d4300dd71c41d74d50440b31f25f45d3d42cf",
-    "express-ws": "^4.0.0"
+     "express-ws": "^4.0.0"
   },
   "engines": {
     "node": "12.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/glitch-secure-json"
+    "url": "https://github.com/jonathan-annett/json-edit"
   },
   "license": "MIT",
   "keywords": [
     "node",
     "glitch",
-    "express"
+    "express",
+    "json"
   ]
 }
