@@ -1,5 +1,8 @@
 const loadWithValidate = require('../public/validate.js').loadWithValidate;
 const applyHysteresis = require('../public/hysteresis.js').applyHysteresis;
+const sha256Node = require ('sha256'), { sha256 } = sha256Node; 
+const path = require("path"); 
+
 
 const aceExpressModule = require('ace-express');
 let aceExpress;
@@ -269,12 +272,14 @@ function jsonEditor( app, express, obj, displayName, template,route, theme) {
     meta.theme = theme;
   }
   
+  sha256Node.express(app,express,path.join(route,'sha256'));
+  
   if (!aceExpress) {
     aceExpress = aceExpressModule.express(app);
   }
     
   app.get(route,function(req,res){
-      res.sendFile("/app/views/index.html");
+      res.sendFile("../views/index.html");
   });
 
   app.ws(route,function(ws, req) {
