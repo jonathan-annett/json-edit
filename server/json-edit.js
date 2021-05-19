@@ -6,7 +6,7 @@ const path = require("path");
 
 const aceExpressModule = require('ace-express');
 let aceExpress;
-
+let public_files=false;
 const objectsEdited = {};
 
 function jsonEditor( app, express, obj, displayName, template,route, theme) {
@@ -271,6 +271,8 @@ function jsonEditor( app, express, obj, displayName, template,route, theme) {
   if (theme) {
     meta.theme = theme;
   }
+  
+  app.use(express.static(path.join(__dirname,"..","public"))));   
   
   sha256Node.express(app,express,path.join(route,'sha256'));
   
