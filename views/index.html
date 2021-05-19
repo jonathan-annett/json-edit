@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="loading">
+  <head>
+    <title>JSON Editor</title>
+    <style type="text/css">
+      #editor {
+        position: absolute;
+        top: 64px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        font-size: 26pt;
+      }
+      html.loading h1,
+      html.loading #editor {
+        display: none;
+      }
+
+      html h1 span {
+        font-size: 16pt;
+        margin-left:10px;
+        color:silver;
+        font-weight:normal;
+        opacity:0.25;
+      }
+
+      html.changed h1 span,
+      html.changed h1 {
+        color: green;
+      }
+
+      
+      html.sending h1 span,
+      html.sending h1 {
+        color: lime;
+      }
+
+      html.invalid_JSON h1 {
+        color: red;
+      }
+
+      html.invalid_JSON h1 span {
+        opacity:1;
+        color: red;
+        
+      }
+      
+      
+      html.closed h1 {
+        background-color: maroon;
+        color:yellow;
+      }
+      
+      
+      
+      img.saving {
+        display:none;
+      }
+      
+     html.saving img.saving {
+        display:block;
+        position:absolute;
+        top : 5px;
+        right:5px;
+        height : 32px;
+        width :32px;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <h1>
+      JSON Editor
+    </h1>
+    <img class="saving" src="/saving.gif" />
+    <div id="editor">{ }</div>
+    <script src="/validate.js"></script>
+    <script src="/hysteresis.js"></script>
+    <script src="/ws_helper.js"></script>
+    <script src="/ace/src/ace.js"></script>
+    <script src="/sha256.js"></script>
+    <script src="/index.js" defer></script>
+  </body>
+</html>
