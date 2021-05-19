@@ -279,7 +279,7 @@ function jsonEditor( app, express, obj, displayName, template,route, theme) {
   }
     
   app.get(route,function(req,res){
-      res.sendFile(path.join(__dirname, "..","views","index.html");
+      res.sendFile(path.join(__dirname, "..","views","index.html"));
   });
 
   app.ws(route,function(ws, req) {
