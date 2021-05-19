@@ -1,3 +1,3 @@
-secure-json-editor 
+json-edit
 ====
 
