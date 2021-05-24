@@ -9,9 +9,9 @@ let aceExpress;
 let public_files=false;
 const objectsEdited = {};
 
-function jsonEditor( app, express, obj, displayName, template,route, theme) {
+function jsonEditor( app, express, server, obj, displayName, template,route, theme) {
   const json = JSON.stringify(obj);
-  const expressws = require("express-ws")(app);
+  const expressws = require("express-ws")(app,server);
   const rand  = Math.floor(Math.random()*16384);
   const rand2 = Math.floor(Math.random()*16384);
   const num   = Date.now() % 16384;
@@ -281,11 +281,13 @@ function jsonEditor( app, express, obj, displayName, template,route, theme) {
   }
     
   app.get(route,function(req,res){
+      console.log("get",req.url);
       res.sendFile(path.join(__dirname, "..","views","index.html"));
   });
-
+  
   app.ws(route,function(ws, req) {
- 
+      
+    console.log("app.ws",req.url,typeof ws);
     connections.push(ws);
     
     const wsSend = ws.send.bind(ws);
