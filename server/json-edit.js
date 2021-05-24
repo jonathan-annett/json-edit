@@ -272,7 +272,10 @@ function jsonEditor( app, express, server, obj, displayName, template,route, the
     meta.theme = theme;
   }
   
-  app.use(express.static(path.join(__dirname,"..","public")));   
+  app.use(
+      route,
+      express.static(path.join(__dirname,"..","public"))
+      );   
   
   sha256Node.express(app,express,path.join(route,'sha256'));
   
@@ -281,13 +284,11 @@ function jsonEditor( app, express, server, obj, displayName, template,route, the
   }
     
   app.get(route,function(req,res){
-      console.log("get",req.url);
       res.sendFile(path.join(__dirname, "..","views","index.html"));
   });
   
   app.ws(route,function(ws, req) {
       
-    console.log("app.ws",req.url,typeof ws);
     connections.push(ws);
     
     const wsSend = ws.send.bind(ws);
