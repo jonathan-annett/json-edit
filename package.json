@@ -6,7 +6,7 @@
    "dependencies": {
     "express": "^4.17.1",
     "ace-express": "github:jonathan-annett/ace-express",
-    "sha256": "github:jonathan-annett/sha256",
+     "sha256": "github:jonathan-annett/sha256#a51a24b28d908458cb8bc31a7d3cca693cd66433",
      "express-ws": "^4.0.0"
   },
   "engines": {
