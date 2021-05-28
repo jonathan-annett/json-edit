@@ -5,7 +5,7 @@
   "main": "server/json-edit.js",
    "dependencies": {
     "express": "^4.17.1",
-    "ace-express": "github:jonathan-annett/ace-express",
+    "ace-express": "github:jonathan-annett/ace-express#539578e838b72b11f64380b3504f671992d5a16d",
      "sha256": "github:jonathan-annett/sha256#a51a24b28d908458cb8bc31a7d3cca693cd66433",
      "express-ws": "^4.0.0"
   },
